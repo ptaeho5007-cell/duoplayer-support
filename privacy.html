@@ -9,8 +9,14 @@
 <p>자막 번역은 Apple의 기기 내 번역(Translation) 기능을, 음성 인식 자막은 Apple의 기기 내 음성 인식(Speech) 기능을 사용합니다. 자막과 음성 데이터는 기기 밖으로 전송되지 않습니다. 언어팩 다운로드는 iOS가 Apple 서버에서 직접 처리합니다.</p>
 <h2>3. 네트워크 사용</h2>
 <p>사용자가 직접 추가한 서버(SMB, FTP, SFTP, WebDAV, HTTP)에만 접속하며, Wi-Fi 전송 기능은 사용자가 켠 동안 같은 네트워크의 브라우저에서만 접속할 수 있습니다.</p>
-<h2>4. 문의</h2>
+<h2>4. 안드로이드판 추가 안내</h2>
+<p>시행일: 2026년 11월 12일. 안드로이드판의 자막 번역은 Google ML Kit 기기 내 번역을, 소리 번역(받아쓰기)은 기기 안에서 동작하는 whisper.cpp를 사용합니다. 번역할 자막 문장, 받아쓴 문장, 영상의 소리는 기기 밖으로 전송되지 않습니다.</p>
+<p>번역 모델은 처음 사용할 때 Google 서버에서, 음성 인식 모델은 Hugging Face(huggingface.co)에서 한 번 내려받습니다(HTTPS). 이때 사용자 데이터는 보내지 않습니다.</p>
+<p>Google ML Kit SDK는 기능 개선과 오류 진단을 위해 성능 지표, 오류 코드, 설치별 식별자, 설정된 번역 언어 같은 진단 정보를 Google로 보낼 수 있습니다(HTTPS 암호화, 제3자 공유 없음, 개인을 식별하는 용도 아님). 자세한 내용은 <a href="https://developers.google.com/ml-kit/android-data-disclosure">Google ML Kit 데이터 공개</a>를 참고하세요. 앱 개발자의 서버로 전송되는 데이터는 없습니다.</p>
+<p>앱 데이터(재생 기록, 설정, 재생목록, 저장한 서버 정보)는 기기 안에만 저장되고 클라우드 백업에서 제외되며, 앱을 삭제하면 모두 삭제됩니다. 서버 비밀번호는 Android Keystore로 암호화해 저장합니다.</p>
+<h2>5. 문의</h2>
 <p>개발자: Park Taeho / 이메일: <a href="mailto:gachonphone@gmail.com">gachonphone@gmail.com</a></p>
 <hr><h2>Privacy Policy (English)</h2>
 <p>DuoPlayer does not collect, store on servers, or share any personal data. There are no ads, analytics or tracking. Playback history, settings and translations stay on your device. Subtitle translation and speech captions use Apple's on-device frameworks; subtitle and audio data never leave the device. Contact: gachonphone@gmail.com.</p>
+<p>Android version: subtitle translation uses Google ML Kit on-device translation and audio captions use on-device whisper.cpp; subtitle text and audio never leave the device. Translation models are downloaded once from Google and speech models from Hugging Face over HTTPS. The ML Kit SDK may send diagnostic data (performance metrics, error codes, a per-installation identifier, selected languages) to Google, encrypted and not shared with third parties. No data is sent to the developer.</p>
 </body></html>
